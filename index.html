@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid_information</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="js/myscript.js"></script>
+    <style>
+        img{
+    width: 300px;
+    height: 300px;
+   
+    margin: auto;
+   display: block;
+   }
+    </style>
+</head>
+
+<body ng-app="MyApp" ng-controller="MyCtrl">
+    <div class="container ">
+        <div class="jumbotron py-3 ">
+             <div class="img">
+                <img class="rounded-circle  "   width="200px" height="200px" src="image/logo.jpg" alt="logo">
+            </div>
+            <h1 class="text-center">{{title}}</h1>
+            <p class="pt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor delectus esse quasi est
+                laudantium accusantium sequi soluta odio, iste excepturi libero placeat voluptatibus sint neque tenetur
+                dolorum, nostrum reiciendis nesciunt.
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti, illo culpa? Quae, accusamus. Amet
+                quibusdam itaque hic placeat labore commodi, aut, et, harum praesentium illum minima iste. Qui, deleniti
+                aperiam?
+            </p>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="card bg-warning text-white">
+                        <div class="card-body">
+                            <h3>Confoirm Cases</h3>
+                            <h3>{{all_data.confirmed.value}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-success text-white">
+                        <div class="card-body">
+                            <h3>Recovered Cases</h3>
+                            <h3>{{all_data.recovered.value}}</h3>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-danger text-white">
+                        <div class="card-body">
+                            <h3>Death Cases</h3>
+                            <h3>{{all_data.deaths.value}}</h3>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <input type="text" class="form-control mt-4" ng-model="c" ng-change="get_c_data()"
+                    placeholder="Enter your contry"/>
+                    <!-- c-data start -->
+                    <!-- ng-if="c-data" -->
+                    <div class="container-fluid"ng-if="c_data">
+                        <h1 class="text-uppercase">{{c}} status</h1>
+                    <div class="row text-center mt-3">
+                        <div class="col-md-4">
+                            <div class="card bg-warning text-white">
+                                <div class="card-body">
+                                    <h3>Confoirm Cases</h3>
+                                    <h3>{{c_data.confirmed.value}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-success text-white">
+                                <div class="card-body">
+                                    <h3>Recovered Cases</h3>
+                                    <h3>{{c_data.recovered.value}}</h3>
+                                </div>
+                            </div>
+        
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-danger text-white">
+                                <div class="card-body">
+                                    <h3>Death  Cases</h3>
+                                    <h3>{{c_data.deaths.value}}</h3>
+                                </div>
+                            </div>
+        
+                        </div>
+                    </div>
+                    <!-- c-data end -->
+            </div>
+          
+        </div>
+    </div>
+</body>
+
+</html>
